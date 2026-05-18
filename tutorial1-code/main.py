@@ -1,15 +1,19 @@
+import os
 import pygame
 import time
 import math
 from utils import scale_image, blit_rotate_center
 
-GRASS = scale_image(pygame.image.load("imgs/grass.jpg"), 2.5)
-TRACK = scale_image(pygame.image.load("imgs/track.png"), 0.9)
+FILE_PATH = os.path.dirname(__file__)
+IMG_PATH = os.path.join(FILE_PATH, "imgs")
 
-TRACK_BORDER = scale_image(pygame.image.load("imgs/track-border.png"), 0.9)
+GRASS = scale_image(pygame.image.load(os.path.join(IMG_PATH, "gramado.png")), 2.5)
+TRACK = scale_image(pygame.image.load(os.path.join(IMG_PATH, "pista.png")), 0.9)
 
-RED_CAR = scale_image(pygame.image.load("imgs/red-car.png"), 0.55)
-GREEN_CAR = scale_image(pygame.image.load("imgs/green-car.png"), 0.55)
+TRACK_BORDER = scale_image(pygame.image.load(os.path.join(IMG_PATH, "contorno.png")), 1.5)
+
+RED_CAR = scale_image(pygame.image.load(os.path.join(IMG_PATH, "miata-branco.png")), 0.2)
+GREEN_CAR = scale_image(pygame.image.load(os.path.join(IMG_PATH, "LFA.png")), 0.070)
 
 WIDTH, HEIGHT = TRACK.get_width(), TRACK.get_height()
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
